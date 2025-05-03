@@ -16,9 +16,6 @@ This is my personal portfolio website built using HTML, CSS, and JavaScript. It 
 - CSS3
 - JavaScript
 
-## 📷 Screenshots
-_Add screenshots if you'd like_
-
 ## 📫 Contact
-- Email: your.email@example.com
-- LinkedIn: [Your Name](https://linkedin.com/in/yourname)
+- Email: your.muleantony18@gmail.com
+- LinkedIn: [Antony Mule](https://www.linkedin.com/in/antony-mule/)
