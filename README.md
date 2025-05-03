@@ -17,5 +17,5 @@ This is my personal portfolio website built using HTML, CSS, and JavaScript. It 
 - JavaScript
 
 ## 📫 Contact
-- Email: your.muleantony18@gmail.com
+- Email: muleantony18@gmail.com
 - LinkedIn: [Antony Mule](https://www.linkedin.com/in/antony-mule/)
