@@ -115,207 +115,222 @@ input::placeholder,
 textarea::placeholder {
   color: rgba(0, 0, 0, 0.1   ); /* light black */
   opacity: 0.4;
-  
 }
-
-
-
-
 
 .home {
     position: relative;
-    margin-top: 2rem; /* Space from the top of the viewport */
     width: 100%;
-    height: calc(100vh - 6rem);
-    background: url('/images/an.png') no-repeat;
-    background-size: cover;
-    background-position: center;
+    min-height: calc(100vh - 6rem);
+    background: #111827;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 10%; /* Padding on left and right */
+    justify-content: center;
+    padding: 0 5%;
+    overflow: hidden;
 }
 
+/* Content Wrapper */
 .home-content {
-    position: relative;
-    max-width: 600px;
-    /* Default padding-top to make sure there's no padding affecting it globally */
-    padding-top: 0;
-}
-
-/* Media Query for Small Screens */
-@media (max-width: 767px) {
-    .home {
-        padding: 0 5%; /* Optional: adjust padding on small screens */
-    }
-
-    .home-content {
-        padding-top: 3rem !important; /* Force the space above the content on small screens */
-        margin-top: 2rem !important; /* Adds extra spacing between the top of the home section and content */
-    }
-}
-
-.home-content h3 {
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 1.3;
-    margin-bottom: 2rem;
-    white-space: normal; /* Ensures text wraps */
-    word-wrap: break-word; /* Breaks long words if needed */
-    max-width: 100%; /* Ensures it stays within the screen */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 2rem; /* Added horizontal inner padding */
 }
 
 
-@media (max-width: 480px) {
-    h3 {
-        font-size: 1.2rem; /* Reduce size for smaller screens */
-        max-width: 100%;
-    }
-
-    .text {
-        font-size: 1rem; /* Adjust font size for better fit */
-    }
+/* Fixed-width text column */
+.text-content {
+    width: 500px;
+    margin-left: 6rem;
+    margin-top: 8rem; /* <-- This adds vertical spacing from the top */
+    margin-bottom: 5rem;
 }
 
 
-.home-content h3 span {
+/* Headings */
+.text-content h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.text-content h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.text-content h3 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.text-content span.text {
     color: #0ef;
 }
 
-.home-content h1 {
-   font-size: 56px;
-   font-weight: 600;
-}
-
-.home-content h2 {
-    font-size: 32px;
-    font-weight: 600;
-}
-
-.home-content p {
-    position: relative;
-    font-size: 1.6rem;
-}
-
+/* Button */
 .btn-box {
-    position: relative;
-    display: flex;
-    justify-content: center; /* Centers the button */
-    align-items: center;
-    margin-top: 2rem; /* Adds space between text and button */
-    margin-bottom: 0.2rem;
+    margin-top: 1rem;
 }
 
 .btn-box .btn {
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 10rem;
-    height: 3;
-    background: var(--main-color);
-    border: .2rem solid var(--main-color);
-    border-radius: 8rem;
-    font-size: 1.2rem;
-    font-weight: 600;
-    letter-spacing: .1rem;
-    
-    color: var(--bg-color);
-    z-index: 1;
-    overflow: hidden;
-    transition: .5s;
+    display: inline-block;         /* Ensures button respects width of content */
+    white-space: nowrap;           /* Prevents text from wrapping to next line */
+    background: #0ef;
+    color: #000;
+    padding: 0.75rem 2rem;         /* Adjust as needed for height/width */
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: 0.3s;
 }
+
 
 .btn-box .btn:hover {
-    color: var(--main-color);
+    background: #000;
+    color: #0ef;
+    cursor: pointer;
 }
 
-.btn-box .btn:nth-child(2) {
-    background: transparent;
-    color: var(--main-color);
-}
 
-.btn-box .btn:nth-child(2):hover {
-    color: var(--bg-color);
-}
-
-.btn-box .btn:nth-child(2)::before {
-    background: var(--main-color);
-}
-
-.btn-box .btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: var(--bg-color);
-    z-index: -1;
-    transition: .5s;
-}
-
-.home-content .image {
-    flex: none; /* Prevents flex resizing */
-    width: 40rem; /* Fixed width */
-    height: auto; /* Maintains aspect ratio */
-    margin-top: 3rem;
-}
-
-.home-content .image img {
-    width: 100%;
-}
-
-.btn-box .btn:hover::before {
-    width: 100%;
-}
-
-.home-sci {
-    position: absolute;
-    bottom: 4rem;
-    width: 170px;
+/* Image Section */
+.image {
+    flex-grow: 1;
     display: flex;
-    justify-content: space-between;
-    margin: 30px 15px 30px 0;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2rem; /* Pulls image away from right edge */
 }
+
+
+.image img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #0ef; /* Optional: nice border around image */
+}
+
+/* Add right margin only on large screens */
+@media (min-width: 1024px) {
+    .image {
+        margin-right: 7rem; /* Adjust as needed */
+    }
+}
+
+/* Social Icons */
+.home-sci {
+    margin-top: 2rem; /* space from button */
+    display: flex;
+    gap: 1rem;
+}
+
+
 
 .home-sci a {
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
     width: 40px;
     height: 40px;
-    background: transparent;
-    border: .2rem solid var(--main-color);
+    border: 2px solid #0ef;
     border-radius: 50%;
-    font-size: 20px;
-    color: var(--main-color);
-    z-index: 1;
-    overflow: hidden;
-    transition: .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0ef;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
-
-
-.home-sci a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: var(--main-color);
-    z-index: -1;
-    transition: .5s;
+.home-sci a:hover {
+    background: #0ef;
+    color: #000;
 }
 
-.home-sci a:hover::before {
-    width: 100%;
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        margin-right: 4rem;
+    }
+
+    #menu-icon {
+        position: absolute;
+        top: 1.2rem;
+        right: 1.5rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .navbar {
+        display: none; /* Or keep it styled for mobile toggle */
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        background: #111827;
+    }
+
+     .navbar.active {
+        display: flex;
+        /* align-items: flex-start; already set */
+        text-align: left; /* Left align text */
+    }
+    
+    .home-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .text-content {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 8rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .btn-box {
+        justify-content: center;
+    }
+
+    .home-sci {
+        justify-content: center;
+        margin-top: 1rem; /* Reduce space between button and icons */
+        margin-bottom: 0.1rem; /* Space before image */
+    }
+
+    .image {
+        justify-content: center;
+        margin-top: 0.1rem;
+        padding-right: 0;
+        margin-bottom: 2rem; /* Adds space below image */
+    }
+
+    .image img {
+        max-width: 250px;
+    }
+
+    .text-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .text-content h2,
+    .text-content h3 {
+        font-size: 1.3rem;
+    }
 }
-
-
-
 
 .about {
     display: grid;
@@ -332,7 +347,7 @@ textarea::placeholder {
     max-height: 400px; /* Reduce height */
     width: 100%; /* Ensures responsiveness */
     height: auto; /* Maintain aspect ratio */
-    border-radius: 8px;
+    border-radius: 20px;
 }
 
 .about-text h2{
@@ -359,28 +374,25 @@ textarea::placeholder {
     margin-bottom: 1.4rem;
 }
 
-.btn-box {
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 9.8rem;
-    height: 3rem; /* Increased height for better proportion */
-    background: var(--main-color);
-    border: .2rem solid var(--main-color);
-    border-radius: .8rem;
-    font-size: 1.8rem;
-    font-weight: 600;
-    letter-spacing: .1rem;
-    margin-top: 0.1rem;
-    color: var(--bg-color);
-    z-index: 1;
-    overflow: hidden;
-    transition: .5s;
+.btn {
+    display: inline-block;
+    white-space: nowrap;
+    background: #0ef;
+    color: #000;
+    padding: 0.75rem 2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: 0.3s;
+    cursor: pointer;
+    margin-top: 1rem;
 }
 
-.btn-box:hover {
-    color: #000;
+.btn:hover {
+    background: #000;
+    color: #0ef;
 }
 
 
@@ -393,60 +405,76 @@ textarea::placeholder {
     }
 
     .about-text {
-        order: 1; /* Ensures text appears first */
+        order: 1;
+        margin: 0 auto; /* Center the text block */
     }
 
     .about-img {
-        order: 2; /* Moves the image below text */
+        order: 2;
         max-width: 35rem;
-        margin: auto;
+        margin: 1rem auto;
     }
 
     .btn-box {
         order: 3;
+        margin: 0 auto; /* Center the button */
     }
 }
 
 @media (max-width: 768px) {
     .about {
         padding: 4rem 5%;
+        text-align: center;
     }
 
     .about-img {
         max-width: 30rem;
+        margin: 1rem auto;
     }
+
+    .about-text {
+        margin: 0 auto;
+    }
+
     .about-text h2,
     .about-text h4,
     .about-text p {
-        text-align: left;
+        text-align: center;
     }
 
     .btn-box {
-        justify-content: center; /* Center button */
+        justify-content: center;
+        margin: 0 auto;
     }
-
-    
 }
 
 @media (max-width: 480px) {
     .about {
         padding: 3rem 4%;
+        text-align: center;
     }
 
     .about-img {
         max-width: 100%;
+        margin: 1rem auto;
+    }
+
+    .about-text {
+        margin: 0 auto;
     }
 
     .about-text h2,
     .about-text h4,
     .about-text p {
-        text-align: left;
+        text-align: center;
     }
 
     .btn-box {
-        justify-content: center; /* Center button */
+        justify-content: center;
+        margin: 0 auto;
     }
 }
+
 
 #services {
     color: aliceblue;
@@ -785,9 +813,27 @@ textarea::placeholder {
     resize: none;
 }
 
-.contact form .btn-box.btns .btn {
+.contact form .btn {
+    display: inline-block;
+    white-space: nowrap;
+    background: #0ef;
+    color: #000;
+    padding: 0.75rem 2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: 0.3s;
     cursor: pointer;
+    margin-top: 1rem; /* spacing from textarea */
 }
+
+.contact form .btn:hover {
+    background: #474646;
+    color: #0ef;
+}
+
 
 .footer {
     display: flex;

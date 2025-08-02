@@ -1,15 +1,38 @@
-# Personal Portfolio Website
+# 💼 Antony Mule - Portfolio Website
 
-This is my personal portfolio website built using HTML, CSS, and JavaScript. It showcases my skills, projects, and experience.
+A personal portfolio website showcasing my **skills, projects, and services** as a **Software Developer, UI/UX Designer, Graphic Designer, and Video Editor**.
 
-## 🌐 Live Preview
-[Visit Portfolio](https://mulepeter.github.io/Portfolio)
+---
 
-## 📁 Features
-- Responsive design
-- Project showcase
-- Downloadable CV
-- Contact section
+## ✨ Key Highlights
+- Fully **responsive** and mobile-friendly design
+- Smooth **scrolling navigation**
+- **Download CV** feature
+- **Latest Projects** section with previews
+- Functional **contact form** (powered by Formspree)
+- Integrated **social media links**
+- **Animations & typing effect** using JavaScript
+
+---
+
+## 🛠 Built With
+- **HTML5** for structure
+- **CSS3** for styling and responsiveness
+- **JavaScript** for interactivity
+- **Font Awesome & Boxicons** for icons
+- **Typed.js** for dynamic text animation
+
+---
+
+## 📂 Project Structure
+```yaml
+portfolio/
+│
+├── index.html          # Main HTML file
+├── copy.css            # Stylesheet
+├── copy.js             # JavaScript functionality
+├── images/             # Project images and profile pictures
+└── documents/          # CV and related files
 
 ## 🛠 Technologies Used
 - HTML5
